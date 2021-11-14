@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/features/chat/chat_screen.dart';
+import 'package:flutter_projects/features/map/map_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Services {
@@ -13,10 +14,7 @@ class Services {
       //when user create the account then redirect to the chat screen
       await auth
           .createUserWithEmailAndPassword(email: email, password: password)
-          .then((value) => {
-                Navigator.of(context).push(CupertinoPageRoute(
-                    builder: (context) => const ChatScreen()))
-              });
+          .then((value) => {Navigator.of(context).push(CupertinoPageRoute(builder: (context) => const MapScreen()))});
     } catch (exception) {
       errorBox(context, exception);
     }
@@ -28,10 +26,7 @@ class Services {
     try {
       await auth
           .signInWithEmailAndPassword(email: email, password: password)
-          .then((value) => {
-                Navigator.of(context).push(CupertinoPageRoute(
-                    builder: (context) => const ChatScreen()))
-              });
+          .then((value) => {Navigator.of(context).push(CupertinoPageRoute(builder: (context) => const MapScreen()))});
     } catch (exception) {
       errorBox(context, exception);
     }

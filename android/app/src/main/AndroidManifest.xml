@@ -1,9 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_projects">
+
+    <!--internet connection-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="flutter_projects"
         android:icon="@mipmap/ic_launcher">
-        <activity
+
+
+       <!-- Google Map Api Key -->
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCYudSQ2zXZFQWLIgWtfSr5x6EylQi9BNA"/>
+
+       <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
@@ -18,6 +28,7 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+
             <!-- Displays an Android View that continues showing the launch screen
                  Drawable until Flutter paints its first frame, then this splash
                  screen fades out. A splash screen is useful to avoid any visual
